@@ -1,0 +1,15 @@
+n_clients = 2
+num_rounds = 5
+qb = 4
+rank = 8
+dataset = databricks/databricks-dolly-15k
+split = closed_qa, open_qa
+size = max, max
+
+
+# client format:
+# client_id: freeze_criterion, freeze_rate/threshold, lr, epochs, batch_size
+
+client 1: act_freeze, 0.963, 1e-5, 1, 16
+client 2: act_freeze, 0.92, 1e-5, 1, 16
+#client 3: esft, 0.2, 1e-5, 1, 16

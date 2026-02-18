@@ -1,0 +1,24 @@
+n_clients = 10
+num_rounds = 12
+rank = 8
+
+#adaptive freeze parameters
+threshold=0.15
+patience=1
+hard_convergence_threshold = 0.8
+
+# client format:
+# client_id: freeze_criterion, freeze_rate, quantization, lr, epochs, batch_size dataset dataset_file_path
+
+client 0: act_freeze, 0.9, 8, 1e-5, 1, 32, tau/commonsense_qa, /files/jetson_impl/client_dataset_formation/non-iid_data/commonsense_qa_0.3_split.json
+client 1: act_freeze, 0.9, 8, 1e-5, 1, 32, tau/commonsense_qa, /files/jetson_impl/client_dataset_formation/non-iid_data/commonsense_qa_0.3_split.json
+client 2: act_freeze, 0.9, 8, 1e-5, 1, 32, tau/commonsense_qa, /files/jetson_impl/client_dataset_formation/non-iid_data/commonsense_qa_0.3_split.json
+client 3: act_freeze, 0.9, 8, 1e-5, 1, 32, tau/commonsense_qa, /files/jetson_impl/client_dataset_formation/non-iid_data/commonsense_qa_0.3_split.json
+client 4: act_freeze, 0.9, 8, 1e-5, 1, 32, tau/commonsense_qa, /files/jetson_impl/client_dataset_formation/non-iid_data/commonsense_qa_0.3_split.json
+client 5: act_freeze, 0.9, 8, 1e-5, 1, 32, tau/commonsense_qa, /files/jetson_impl/client_dataset_formation/non-iid_data/commonsense_qa_0.3_split.json
+client 6: act_freeze, 0.9, 8, 1e-5, 1, 32, tau/commonsense_qa, /files/jetson_impl/client_dataset_formation/non-iid_data/commonsense_qa_0.3_split.json
+client 7: act_freeze, 0.9, 8, 1e-5, 1, 32, tau/commonsense_qa, /files/jetson_impl/client_dataset_formation/non-iid_data/commonsense_qa_0.3_split.json
+client 8: act_freeze, 0.9, 8, 1e-5, 1, 32, tau/commonsense_qa, /files/jetson_impl/client_dataset_formation/non-iid_data/commonsense_qa_0.3_split.json
+client 9: act_freeze, 0.9, 8, 1e-5, 1, 32, tau/commonsense_qa, /files/jetson_impl/client_dataset_formation/non-iid_data/commonsense_qa_0.3_split.json
+
+

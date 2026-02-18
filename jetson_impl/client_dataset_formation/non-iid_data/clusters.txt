@@ -1,0 +1,87 @@
+PIQA:
+    "Cooking & Meal Preparation",      # Cluster 0 (Heat/Meat)
+    "Kitchen Supplies & Storage",      # Cluster 1 (towel, paper, box)
+    "Surface Finishing & Painting",    # Cluster 2 (paint, polish, shine)
+    "Construction & Crafting materials", # Cluster 3 (cut, wood, wire)
+    "Workspace Organization & DIY",    # Cluster 4 (holder, store, organize)
+    "Baking & Dough Chemistry",        # Cluster 5 (dough, bread, cookies)
+    "Life Hacks & Preservation",       # Cluster 6 (save, money, protect)
+    "Tools & Mechanical Manipulation", # Cluster 7 (open, cut, stuck)
+    "Electronics & Digital Media",     # Cluster 8 (phone, app, facebook)
+    "Confectionery & Sweets",          # Cluster 9 (chocolate, sugar, ice cream)
+    "Gardening & Environment Control", # Cluster 10 (plants, water, cool)
+    "Cleaning & Stain Removal"         # Cluster 11 (wash, stains, rust)
+
+commonsence_qa:
+    "Socializing & Recreation",        # Cluster 0 (friends, chatting, play)
+    "Physical Activity & Body States", # Cluster 1 (jogging, drunk, exercising)
+    "Academic & Social Concepts",      # Cluster 2 (science, inflation, society)
+    "Domestic Environments",           # Cluster 3 (room, kitchen, home)
+    "Public Infrastructure & Places",  # Cluster 4 (office, building, city)
+    "Subjective Narratives & Feelings",# Cluster 5 (felt, thought, respect)
+    "Family Life & Parenting",         # Cluster 6 (children, mother, entertaining)
+    "Crime, Law & Conflict",           # Cluster 7 (murder, perjury, divorce)
+    "Nature & Physical Elements",      # Cluster 8 (water, ocean, steel)
+    "Food & Dining",                   # Cluster 9 (eating, breakfast, lunch)
+    "Animals & Biology",               # Cluster 10 (eagle, cat, snake)
+    "Commerce & Household Objects"     # Cluster 11 (store, buy, razor, chair)
+
+boolq:
+    "Gun Control & Firearms Law",      # Cluster 0
+    "Zoology & Species Classification",# Cluster 1
+    "TV Series Production & Air Dates",# Cluster 2
+    "Immigration & Citizenship",       # Cluster 3
+    "Video Games & Consoles",          # Cluster 4
+    "US Professional Sports (NBA/NFL)",# Cluster 5
+    "Biology & Physiology",            # Cluster 6
+    "Film & Literature Adaptations",   # Cluster 7
+    "TV Plotlines & Character Fates",  # Cluster 8
+    "International Soccer (FIFA/UEFA)",# Cluster 9
+    "US Politics & Constitution",      # Cluster 10
+    "Geography & Infrastructure",      # Cluster 11
+    "Business & Corporate Brands"      # Cluster 12
+
+winogrande:
+    "Social Scenarios (Female Protagonists A)", # Cluster 0 (Natalie, Cynthia)
+    "Everyday Objects & Physics",               # Cluster 1 (Car, ball, weak/strong)
+    "Social Scenarios (Male Protagonists A)",   # Cluster 2 (Randy, Brett)
+    "Clothing & Appearance",                    # Cluster 3 (Shirt, dress, wear)
+    "Buildings & Locations",                    # Cluster 4 (House, school, lot)
+    "Spatial Dimensions & Fit",                 # Cluster 5 (Small, large, doorway)
+    "Social Scenarios (Male Protagonists B)",   # Cluster 6 (Joseph, Robert)
+    "Liquids, Containers & Volume",             # Cluster 7 (Water, poured, bottle)
+    "Food, Dining & Taste",                     # Cluster 8 (Eat, steak, salad)
+    "Social Scenarios (Female Protagonists B)"  # Cluster 9 (Cynthia, Natalie)
+
+social_iqa:
+    "Pets & Playtime",                  # Cluster 0 (dog, game, played)
+    "Business & Household Appliances",  # Cluster 1 (machine, business, required)
+    "Lost Belongings & Misplaced Items",# Cluster 2 (keys, wallet, lost)
+    "Celebrations & Birthdays",         # Cluster 3 (birthday, food, dinner)
+    "School & Emotional Reactions",     # Cluster 4 (class, loved, felt)
+    "Family Relations (Spouses/Siblings)", # Cluster 5 (sister, wife, son)
+    "Pet Care & Feeding",               # Cluster 6 (dog, food, long)
+    "Extended Family & Gatherings",     # Cluster 7 (family, parents, big)
+    "Domestic Rules & Broken Items",    # Cluster 8 (parents, room, broke, children)
+    "Daily Routines & Childcare",       # Cluster 9 (walked, water, kids, dinner)
+    "Career & College Applications",    # Cluster 10 (nursing, recommendation, letter)
+    "General Pet Interactions",         # Cluster 11 (dog, family, play - generic)
+    "Mother-Daughter Dynamics",         # Cluster 12 (mom, daughter, worked)
+    "Gifts, Invitations & Hosting",     # Cluster 13 (gift, invited, order)
+    "Competition, Conflict & Goals",    # Cluster 14 (goals, war, begged, reached)
+    "Professional & Official Actions"   # Cluster 15 (office, action, checked)
+
+race:
+    "Family Narratives & Relationships",  # Cluster 0 (mother, father, life)
+    "School Life & Classroom Interactions", # Cluster 1 (teacher, class, students)
+    "Cultural Differences & Language",    # Cluster 2 (english, world, american, language)
+    "Fictional Stories & Character Dialogue", # Cluster 3 (mr, boy, says, young)
+    "Biographies & Historical Figures",   # Cluster 4 (famous, great, years, life)
+    "Personal Growth & Life Lessons",     # Cluster 5 (learn, think, important, try)
+    "Technology & Digital Media",         # Cluster 6 (internet, computer, phone, online)
+    "Chinese Culture & Society",          # Cluster 7 (china, beijing, chinese)
+    "Education Systems & Parenting",      # Cluster 8 (schools, education, parents)
+    "Environmental Science & Ecology",    # Cluster 9 (water, earth, air, energy)
+    "Zoology & Animal Behavior",          # Cluster 10 (animals, dogs, birds)
+    "Travel, Tourism & Advertisements",   # Cluster 11 (hotel, visit, 00, park)
+    "Health, Nutrition & Human Biology"   # Cluster 12 (food, body, sleep, health)

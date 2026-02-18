@@ -1,0 +1,11 @@
+n_clients = 2
+num_rounds = 5
+qb = 4
+rank = 8
+
+# client format:
+# client_id: freeze_criterion, freeze_rate/threshold, lr, epochs, dataset, dataset_split, range, batch_size
+
+client 1: act_freeze, 0.963, 1e-5, 1, meta-math/MetaMathQA, open_qa, 1000, 16
+client 2: act_freeze, 0.92, 1e-5, 1, meta-math/MetaMathQA, general_qa, 1000, 16
+#client 3: esft, 0.2, 1e-5, 1, meta-math/MetaMathQA, , 1000, 16

@@ -1,0 +1,66 @@
+import torch
+from peft.tuners.lora import Linear as LoraLinear
+
+def accumulate_lora_into_base(base_linear, A, B, r, alpha):
+    W = base_linear.weight
+    print(W)
+    scale = alpha / r
+    delta = (B @ A) * scale
+    W += delta
+    
+
+def accumulate_expert_lora(expert, gate_A, gate_B, up_A, up_B, down_A, down_B, r, alpha):
+    print('Here')
+    accumulate_lora_into_base(expert.gate_proj,  gate_A,  gate_B,  r, alpha)
+    accumulate_lora_into_base(expert.up_proj,    up_A,    up_B,    r, alpha)
+    accumulate_lora_into_base(expert.down_proj,  down_A,  down_B,  r, alpha)
+
+    expert.gate_proj = expert.gate_proj.base_layer
+    expert.up_proj   = expert.up_proj.base_layer
+    expert.down_proj = expert.down_proj.base_layer
+
+
+
+def find_lora_weights_received_params(received_params, layer, expert):
+    base = f"base_model.model.model.layers.{layer}.mlp.experts.{expert}"
+
+    gate_proj_A = received_params[f"{base}.gate_proj.lora_A.default.weight"]
+    gate_proj_B = received_params[f"{base}.gate_proj.lora_B.default.weight"]
+
+    up_proj_A = received_params[f"{base}.up_proj.lora_A.default.weight"]
+    up_proj_B = received_params[f"{base}.up_proj.lora_B.default.weight"]
+
+    down_proj_A = received_params[f"{base}.down_proj.lora_A.default.weight"]
+    down_proj_B = received_params[f"{base}.down_proj.lora_B.default.weight"]
+
+    return gate_proj_A, gate_proj_B, up_proj_A, up_proj_B, down_proj_A, down_proj_B
+
+
+
+def update_and_accumulate_lora_adapter(model, received_params, lora_params, trainable, rank):
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    #print(model)
+    for layer_idx, layer in enumerate(model.base_model.model.model.layers):
+        if layer_idx >= len(lora_params):
+            break
+
+        for expert_idx in lora_params[layer_idx]:
+            gate_proj_A, gate_proj_B, up_proj_A, up_proj_B, down_proj_A, down_proj_B = [
+                p.to(device) for p in find_lora_weights_received_params(received_params, layer_idx, expert_idx)
+            ]
+
+            if expert_idx not in trainable[layer_idx]:
+                accumulate_expert_lora(layer.mlp.experts[expert_idx],
+                                      gate_proj_A, gate_proj_B,
+                                      up_proj_A, up_proj_B,
+                                      down_proj_A, down_proj_B,
+                                      rank, 2*rank)
+            else:
+                expert = layer.mlp.experts[expert_idx]
+                with torch.no_grad():
+                    expert.gate_proj.lora_A["default"].weight.copy_(gate_proj_A)
+                    expert.gate_proj.lora_B["default"].weight.copy_(gate_proj_B)
+                    expert.up_proj.lora_A["default"].weight.copy_(up_proj_A)
+                    expert.up_proj.lora_B["default"].weight.copy_(up_proj_B)
+                    expert.down_proj.lora_A["default"].weight.copy_(down_proj_A)
+                    expert.down_proj.lora_B["default"].weight.copy_(down_proj_B)
