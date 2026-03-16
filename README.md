@@ -6,7 +6,7 @@
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 This repository contains the implementation of the FedMoECap framework for two distinct hardware tiers:
 
@@ -15,7 +15,7 @@ This repository contains the implementation of the FedMoECap framework for two d
 
 ---
 
-## 🛠 Key Contributions
+## Key Contributions
 
 The framework introduces several novel components to optimize federated MoE fine-tuning:
 
@@ -26,7 +26,7 @@ The framework introduces several novel components to optimize federated MoE fine
 
 ---
 
-## 🚀 Adaptive Convergence Management
+## Adaptive Convergence Management
 
 FedMoECap provides three complementary strategies to manage expert convergence based on relative parameter updates:
 
@@ -36,7 +36,7 @@ FedMoECap provides three complementary strategies to manage expert convergence b
 
 ---
 
-## 📊 Performance & Efficiency
+## Performance & Efficiency
 
 Evaluated using the **OLMOE-1B-7B** model on **PIQA**, **BoolQ**, and **CommonsenseQA** benchmarks, FedMoECap demonstrates significant gains over standard methods:
 
@@ -46,5 +46,8 @@ Evaluated using the **OLMOE-1B-7B** model on **PIQA**, **BoolQ**, and **Commonse
 
 ---
 
-## 📝 Citation
-If you use this work, please cite the original thesis:
+## Citation
+If you use this work, please cite the original thesis.
+
+## Acknowledgments
+Special thanks to NVIDIA's Academic Grant and the project **LoRA-enabled Federated Fine-Tuning of Small Language Models at the Edge** for providing access to NVIDIA Jetson Orin AGX for the experiments.
